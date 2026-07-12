@@ -10,17 +10,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <script>
-  // No-flash theme: the app's native chrome supplies the header + theme toggle
-  // when this page is embedded as a webview. Here we only pick the right theme
-  // before paint: ?theme= (passed by the host app), then the same localStorage
-  // key the app uses ("theme"), then the system preference.
+  // No-flash theme. The host app passes the desired theme on the URL:
+  //   - direct hosting:  terms.html?view=dark
+  //   - via htmlpreview: ...terms.html#view=dark   (htmlpreview reserves the
+  //     query string for the raw-file URL and only forwards the fragment to the
+  //     embedded page, so we read BOTH search and hash).
+  // Then we fall back to the localStorage key the app uses ("theme"), then the
+  // system color-scheme.
   (function () {
-    try {
-      var p = new URLSearchParams(location.search).get("theme");
-      var s = p || localStorage.getItem("theme");
-      var dark = s ? s === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (dark) document.documentElement.classList.add("dark");
-    } catch (e) {}
+    function pickView() {
+      try {
+        var s = new URLSearchParams(location.search).get("view");
+        if (s) return s;
+        return new URLSearchParams(location.hash.replace(/^#/, "")).get("view");
+      } catch (e) { return null; }
+    }
+    var v = pickView();
+    var stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (e) {}
+    var dark = v ? v === "dark"
+      : (stored === "light" || stored === "dark") ? stored === "dark"
+      : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (dark) document.documentElement.classList.add("dark");
   })();
 </script>
 <style>
