@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Terms of Service · JSON Explorer</title>
+<meta name="description" content="Terms of Service for the JSON Explorer mobile app." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<script>
+  // No-flash theme: the app's native chrome supplies the header + theme toggle
+  // when this page is embedded as a webview. Here we only pick the right theme
+  // before paint: ?theme= (passed by the host app), then the same localStorage
+  // key the app uses ("theme"), then the system preference.
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search).get("theme");
+      var s = p || localStorage.getItem("theme");
+      var dark = s ? s === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("dark");
+    } catch (e) {}
+  })();
+</script>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  :root {
+    --je-bg-outer:#e7e9ee; --je-bg:#f5f6f9; --je-surface:#ffffff; --je-surface-2:#ffffff;
+    --je-border:#e3e5ec; --je-border-soft:#ecedf2;
+    --je-text:#1a1d27; --je-text-2:#5b6178; --je-text-3:#9ba1b5;
+    --je-object:#3d63d8; --je-object-bg:#eaf0fe;
+    --je-array:#a6740a; --je-array-bg:#fbf1dd;
+    --je-string:#2f7a38; --je-string-bg:#e7f5e8;
+    --je-number:#0e7fa3; --je-number-bg:#e3f4f8;
+    --je-boolean:#d6335a; --je-boolean-bg:#fbe4ea;
+    --je-null:#6b7290; --je-null-bg:#eeeff3;
+  }
+  html.dark {
+    --je-bg-outer:#05070b; --je-bg:#0b0e14; --je-surface:#12161f; --je-surface-2:#171b25;
+    --je-border:#232838; --je-border-soft:#1a1e29;
+    --je-text:#e8eaf0; --je-text-2:#8b92a8; --je-text-3:#5b6178;
+    --je-object:#7aa2f7; --je-object-bg:#1b2740;
+    --je-array:#e0af68; --je-array-bg:#2b2416;
+    --je-string:#9ece6a; --je-string-bg:#1e2a18;
+    --je-number:#7dcfff; --je-number-bg:#16262e;
+    --je-boolean:#f7768e; --je-boolean-bg:#2e1b22;
+    --je-null:#565f89; --je-null-bg:#1c1f2b;
+  }
+  html,body { margin:0; padding:0; }
+  body {
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--je-bg-outer);
+    color:var(--je-text);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.5;
+  }
+  .page { max-width:680px; margin:0 auto; min-height:100dvh; background:var(--je-bg); display:flex; flex-direction:column; }
+  main { padding:1.5rem 1.5rem 3rem; flex:1; }
+  h1.title { font-family:"Space Grotesk",system-ui,sans-serif; font-size:1.75rem; font-weight:700; margin:0 0 0.25rem; letter-spacing:-0.01em; }
+  .updated { font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--je-text-3); margin:0 0 1.25rem; }
+  .intro { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 1.5rem; }
+  section.doc { margin-bottom:1.25rem; }
+  section.doc h2 { font-size:0.9375rem; font-weight:600; color:var(--je-text); margin:0 0 0.5rem; }
+  section.doc p { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 0.5rem; }
+  section.doc p:last-child { margin-bottom:0; }
+  a.link { color:var(--je-object); text-decoration:none; }
+  a.link:hover { text-decoration:underline; }
+  footer { padding:1.25rem 1.5rem 2rem; font-family:"JetBrains Mono",monospace; font-size:0.7rem; color:var(--je-text-3); border-top:1px solid var(--je-border-soft); }
+  ::selection { background:var(--je-object); color:var(--je-bg); }
+  @media (max-width:480px) {
+    main { padding:1.25rem 1.25rem 2.5rem; }
+    h1.title { font-size:1.5rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <h1 class="title">Terms of Service</h1>
+      <p class="updated">Last updated July 12, 2026</p>
+
+      <p class="intro">These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the JSON Explorer mobile application (the &ldquo;App&rdquo;) provided by Toshit Singh (&ldquo;we&rdquo; or &ldquo;us&rdquo;). By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+
+      <section class="doc">
+        <h2>1. License to Use</h2>
+        <p>Subject to your compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to download, install, and use the App for your own use on a device that you own or control.</p>
+      </section>
+
+      <section class="doc">
+        <h2>2. Acceptable Use</h2>
+        <p>You agree to use the App only for lawful purposes and in a manner that does not violate any applicable law or the rights of others.</p>
+        <p>You are solely responsible for any JSON you load, paste, upload, or fetch, and for any URL or API you choose to access through the App. You must not use the App to access systems, data, or APIs without proper authorization.</p>
+      </section>
+
+      <section class="doc">
+        <h2>3. Your Content</h2>
+        <p>You retain all rights to any JSON or other content you load into the App. The App processes your content locally on your device. We do not access, host, or claim any ownership over your content.</p>
+      </section>
+
+      <section class="doc">
+        <h2>4. Intellectual Property</h2>
+        <p>The App, including its design, source code, and visual elements, is owned by us and protected by applicable intellectual-property laws. These Terms do not grant you any right to use our trademarks, logos, or other branding.</p>
+      </section>
+
+      <section class="doc">
+        <h2>5. No Warranty</h2>
+        <p>The App is provided &ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE,&rdquo; without warranties of any kind, whether express or implied. We do not guarantee that the App will be error-free, uninterrupted, secure, or that it will meet your requirements. Your use of the App is at your own risk.</p>
+      </section>
+
+      <section class="doc">
+        <h2>6. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data or profits, arising out of or related to your use of the App.</p>
+        <p>In no event shall our total liability to you exceed the amount, if any, that you paid us for the App.</p>
+      </section>
+
+      <section class="doc">
+        <h2>7. Third-Party Services</h2>
+        <p>The App may let you connect to third-party URLs and APIs of your choosing. We do not control, and are not responsible for, the content, availability, accuracy, or practices of any third-party service. Your use of third-party services is at your own risk and subject to their own terms.</p>
+      </section>
+
+      <section class="doc">
+        <h2>8. Termination</h2>
+        <p>You may stop using the App at any time by uninstalling it. We may modify, suspend, or discontinue the App, or these Terms, at any time and without notice. Upon termination, the license granted in Section 1 ends.</p>
+      </section>
+
+      <section class="doc">
+        <h2>9. Changes to These Terms</h2>
+        <p>We may revise these Terms at any time, at our sole discretion, with or without prior notice.</p>
+        <p>The most current version will always be available within the App with an updated &ldquo;Last updated&rdquo; date. Your continued use of the App after changes take effect constitutes your acceptance of the revised Terms. If you do not agree to the revised Terms, you should stop using the App.</p>
+      </section>
+
+      <section class="doc">
+        <h2>10. Governing Law</h2>
+        <p>These Terms are governed by the laws of your jurisdiction of residence, without regard to its conflict-of-law principles.</p>
+      </section>
+
+      <section class="doc">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about this document or your use of JSON Explorer, you can contact Toshit Singh at <a class="link" href="mailto:toshit@tosnetic.com">toshit@tosnetic.com</a>.</p>
+        <p>We will respond to questions about these Terms as soon as reasonably possible.</p>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 Toshit Singh &middot; JSON Explorer</footer>
+  </div>
+</body>
+</html>

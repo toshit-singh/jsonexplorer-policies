@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Privacy Policy · JSON Explorer</title>
+<meta name="description" content="Privacy Policy for the JSON Explorer mobile app." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<script>
+  // No-flash theme: the app's native chrome supplies the header + theme toggle
+  // when this page is embedded as a webview. Here we only pick the right theme
+  // before paint: ?theme= (passed by the host app), then the same localStorage
+  // key the app uses ("theme"), then the system preference.
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search).get("theme");
+      var s = p || localStorage.getItem("theme");
+      var dark = s ? s === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("dark");
+    } catch (e) {}
+  })();
+</script>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  :root {
+    --je-bg-outer:#e7e9ee; --je-bg:#f5f6f9; --je-surface:#ffffff; --je-surface-2:#ffffff;
+    --je-border:#e3e5ec; --je-border-soft:#ecedf2;
+    --je-text:#1a1d27; --je-text-2:#5b6178; --je-text-3:#9ba1b5;
+    --je-object:#3d63d8; --je-object-bg:#eaf0fe;
+    --je-array:#a6740a; --je-array-bg:#fbf1dd;
+    --je-string:#2f7a38; --je-string-bg:#e7f5e8;
+    --je-number:#0e7fa3; --je-number-bg:#e3f4f8;
+    --je-boolean:#d6335a; --je-boolean-bg:#fbe4ea;
+    --je-null:#6b7290; --je-null-bg:#eeeff3;
+  }
+  html.dark {
+    --je-bg-outer:#05070b; --je-bg:#0b0e14; --je-surface:#12161f; --je-surface-2:#171b25;
+    --je-border:#232838; --je-border-soft:#1a1e29;
+    --je-text:#e8eaf0; --je-text-2:#8b92a8; --je-text-3:#5b6178;
+    --je-object:#7aa2f7; --je-object-bg:#1b2740;
+    --je-array:#e0af68; --je-array-bg:#2b2416;
+    --je-string:#9ece6a; --je-string-bg:#1e2a18;
+    --je-number:#7dcfff; --je-number-bg:#16262e;
+    --je-boolean:#f7768e; --je-boolean-bg:#2e1b22;
+    --je-null:#565f89; --je-null-bg:#1c1f2b;
+  }
+  html,body { margin:0; padding:0; }
+  body {
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--je-bg-outer);
+    color:var(--je-text);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.5;
+  }
+  .page { max-width:680px; margin:0 auto; min-height:100dvh; background:var(--je-bg); display:flex; flex-direction:column; }
+  main { padding:1.5rem 1.5rem 3rem; flex:1; }
+  h1.title { font-family:"Space Grotesk",system-ui,sans-serif; font-size:1.75rem; font-weight:700; margin:0 0 0.25rem; letter-spacing:-0.01em; }
+  .updated { font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--je-text-3); margin:0 0 1.25rem; }
+  .intro { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 1.5rem; }
+  section.doc { margin-bottom:1.25rem; }
+  section.doc h2 { font-size:0.9375rem; font-weight:600; color:var(--je-text); margin:0 0 0.5rem; }
+  section.doc p { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 0.5rem; }
+  section.doc p:last-child { margin-bottom:0; }
+  a.link { color:var(--je-object); text-decoration:none; }
+  a.link:hover { text-decoration:underline; }
+  footer { padding:1.25rem 1.5rem 2rem; font-family:"JetBrains Mono",monospace; font-size:0.7rem; color:var(--je-text-3); border-top:1px solid var(--je-border-soft); }
+  ::selection { background:var(--je-object); color:var(--je-bg); }
+  @media (max-width:480px) {
+    main { padding:1.25rem 1.25rem 2.5rem; }
+    h1.title { font-size:1.5rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <h1 class="title">Privacy Policy</h1>
+      <p class="updated">Last updated July 12, 2026</p>
+
+      <p class="intro">This Privacy Policy describes how JSON Explorer (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;the App&rdquo;) handles information when you use the JSON Explorer mobile application. By using the App, you agree to the practices described here.</p>
+
+      <section class="doc">
+        <h2>1. Information We Collect</h2>
+        <p>We do not collect, transmit, or store any personal information about you. JSON Explorer does not require an account, and we do not ask for your name, email address, phone number, device identifiers, or location.</p>
+        <p>The App&rsquo;s purpose is to let you view JSON that you paste, upload, or fetch from a URL. This data is processed and stored locally on your device and is never sent to us or to any server we operate.</p>
+      </section>
+
+      <section class="doc">
+        <h2>2. How Your Data Is Stored</h2>
+        <p>When you load JSON, the App may keep a local copy in your History so you can revisit it later. Your theme and default-view preferences are also saved. All of this is stored on your device using the operating system&rsquo;s native storage and is never uploaded to us.</p>
+        <p>You are in control: you can delete individual entries or clear your entire History at any time from the History screen. Uninstalling the App removes all locally stored data.</p>
+      </section>
+
+      <section class="doc">
+        <h2>3. Network Use</h2>
+        <p>When you use the &ldquo;Open URL&rdquo; or Advanced API builder feature to fetch JSON, the App makes a network request directly from your device to the URL or API you specify. The App acts as a client on your behalf. We do not route this request through our servers, and we do not see, log, or store the request or its response.</p>
+        <p>Your use of any third-party URL or API is governed by that provider&rsquo;s own terms and privacy practices. We encourage you to review them.</p>
+      </section>
+
+      <section class="doc">
+        <h2>4. Clipboard Access</h2>
+        <p>To make loading JSON faster, the App can read your device clipboard to detect whether you have copied JSON and offer to load it. Clipboard contents are read only while the App is open and only for this purpose; they are processed on-device.</p>
+        <p>Clipboard data is never transmitted off your device. It is added to your local History only if you choose to load the detected JSON.</p>
+      </section>
+
+      <section class="doc">
+        <h2>5. Third-Party Services</h2>
+        <p>The App does not include any advertising networks, analytics SDKs, cross-app trackers, or other third-party services that collect data from you.</p>
+      </section>
+
+      <section class="doc">
+        <h2>6. Children&rsquo;s Privacy</h2>
+        <p>The App is intended for general audiences and developers. It is not directed to children under 13 (or the applicable age in your jurisdiction), and we do not knowingly collect any information from children.</p>
+      </section>
+
+      <section class="doc">
+        <h2>7. Security</h2>
+        <p>Because the App does not transmit personal information to us and stores your data locally on your device, the security of that data depends on the protections provided by your device&rsquo;s operating system.</p>
+      </section>
+
+      <section class="doc">
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update or modify this Privacy Policy at any time, at our sole discretion, with or without prior notice.</p>
+        <p>When we do, we will update the &ldquo;Last updated&rdquo; date shown within the App. Your continued use of the App after a change becomes effective constitutes your acceptance of the updated Privacy Policy. If you do not agree to the updated policy, you should stop using the App.</p>
+      </section>
+
+      <section class="doc">
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions about this document or your use of JSON Explorer, you can contact Toshit Singh at <a class="link" href="mailto:toshit@tosnetic.com">toshit@tosnetic.com</a>.</p>
+        <p>We will respond to privacy-related questions as soon as reasonably possible.</p>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 Toshit Singh &middot; JSON Explorer</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Support · JSON Explorer</title>
+<meta name="description" content="Get help with JSON Explorer: contact, bug reports, and answers to common questions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<script>
+  // No-flash theme: the app's native chrome supplies the header + theme toggle
+  // when this page is embedded as a webview. Here we only pick the right theme
+  // before paint: ?theme= (passed by the host app), then the same localStorage
+  // key the app uses ("theme"), then the system preference.
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search).get("theme");
+      var s = p || localStorage.getItem("theme");
+      var dark = s ? s === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("dark");
+    } catch (e) {}
+  })();
+</script>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  :root {
+    --je-bg-outer:#e7e9ee; --je-bg:#f5f6f9; --je-surface:#ffffff; --je-surface-2:#ffffff;
+    --je-border:#e3e5ec; --je-border-soft:#ecedf2;
+    --je-text:#1a1d27; --je-text-2:#5b6178; --je-text-3:#9ba1b5;
+    --je-object:#3d63d8; --je-object-bg:#eaf0fe;
+    --je-array:#a6740a; --je-array-bg:#fbf1dd;
+    --je-string:#2f7a38; --je-string-bg:#e7f5e8;
+    --je-number:#0e7fa3; --je-number-bg:#e3f4f8;
+    --je-boolean:#d6335a; --je-boolean-bg:#fbe4ea;
+    --je-null:#6b7290; --je-null-bg:#eeeff3;
+  }
+  html.dark {
+    --je-bg-outer:#05070b; --je-bg:#0b0e14; --je-surface:#12161f; --je-surface-2:#171b25;
+    --je-border:#232838; --je-border-soft:#1a1e29;
+    --je-text:#e8eaf0; --je-text-2:#8b92a8; --je-text-3:#5b6178;
+    --je-object:#7aa2f7; --je-object-bg:#1b2740;
+    --je-array:#e0af68; --je-array-bg:#2b2416;
+    --je-string:#9ece6a; --je-string-bg:#1e2a18;
+    --je-number:#7dcfff; --je-number-bg:#16262e;
+    --je-boolean:#f7768e; --je-boolean-bg:#2e1b22;
+    --je-null:#565f89; --je-null-bg:#1c1f2b;
+  }
+  html,body { margin:0; padding:0; }
+  body {
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--je-bg-outer);
+    color:var(--je-text);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.5;
+  }
+  .page { max-width:680px; margin:0 auto; min-height:100dvh; background:var(--je-bg); display:flex; flex-direction:column; }
+  main { padding:1.5rem 1.5rem 3rem; flex:1; }
+  h1.title { font-family:"Space Grotesk",system-ui,sans-serif; font-size:1.75rem; font-weight:700; margin:0 0 0.25rem; letter-spacing:-0.01em; }
+  .updated { font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--je-text-3); margin:0 0 1.25rem; }
+  .intro { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 1.5rem; }
+  section.doc { margin-bottom:1.25rem; }
+  section.doc h2 { font-size:0.9375rem; font-weight:600; color:var(--je-text); margin:0 0 0.5rem; }
+  section.doc p { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0 0 0.5rem; }
+  section.doc p:last-child { margin-bottom:0; }
+  a.link { color:var(--je-object); text-decoration:none; }
+  a.link:hover { text-decoration:underline; }
+  code { font-family:"JetBrains Mono",monospace; font-size:0.85em; color:var(--je-text); background:var(--je-null-bg); padding:0.1em 0.35em; border-radius:0.3rem; }
+  .contact-card {
+    display:flex; align-items:center; gap:0.75rem;
+    background:var(--je-surface); border:1px solid var(--je-border);
+    border-radius:0.75rem; padding:0.75rem; margin-bottom:1.5rem;
+    text-decoration:none;
+  }
+  .contact-icon {
+    flex:0 0 auto; width:2.25rem; height:2.25rem; border-radius:0.5rem;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--je-number-bg); color:var(--je-number);
+  }
+  .contact-card .who { font-size:0.9375rem; font-weight:500; color:var(--je-text); }
+  .contact-card .email { font-family:"JetBrains Mono",monospace; font-size:0.75rem; color:var(--je-text-3); }
+  ul.faq { list-style:none; padding:0; margin:0; }
+  ul.faq li { margin-bottom:0.85rem; }
+  ul.faq .q { display:block; font-size:0.9375rem; font-weight:600; color:var(--je-text); margin:0 0 0.2rem; }
+  ul.faq .a { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin:0; }
+  ul.checklist { margin:0.5rem 0 0; padding-left:1.1rem; }
+  ul.checklist li { font-size:0.9375rem; line-height:1.7; color:var(--je-text-2); margin-bottom:0.25rem; }
+  footer { padding:1.25rem 1.5rem 2rem; font-family:"JetBrains Mono",monospace; font-size:0.7rem; color:var(--je-text-3); border-top:1px solid var(--je-border-soft); }
+  ::selection { background:var(--je-object); color:var(--je-bg); }
+  @media (max-width:480px) {
+    main { padding:1.25rem 1.25rem 2.5rem; }
+    h1.title { font-size:1.5rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <h1 class="title">Support</h1>
+      <p class="updated">Last updated July 12, 2026</p>
+
+      <p class="intro">Need a hand with JSON Explorer? You&rsquo;re in the right place. Below you&rsquo;ll find how to reach us, what to include when something isn&rsquo;t working, and answers to common questions.</p>
+
+      <a class="contact-card" href="mailto:toshit@tosnetic.com?subject=JSON%20Explorer%20support">
+        <span class="contact-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+        </span>
+        <span>
+          <span class="who">Email support</span><br />
+          <span class="email">toshit@tosnetic.com</span>
+        </span>
+      </a>
+
+      <section class="doc">
+        <h2>1. Reporting a Bug</h2>
+        <p>Found something broken? Tell us about it &mdash; the more detail, the faster we can fix it. Please include:</p>
+        <ul class="checklist">
+          <li>The app version (shown in Settings &rarr; About)</li>
+          <li>Your device model and operating system version</li>
+          <li>Step-by-step instructions to reproduce the issue</li>
+          <li>What you expected, and what happened instead</li>
+          <li>The JSON snippet or URL involved, if you&rsquo;re comfortable sharing it</li>
+        </ul>
+      </section>
+
+      <section class="doc">
+        <h2>2. Feature Requests</h2>
+        <p>Have an idea that would make JSON Explorer better? We&rsquo;d love to hear it. Send a short note describing what you want and the problem it solves for you.</p>
+      </section>
+
+      <section class="doc">
+        <h2>3. Managing Your Data</h2>
+        <p>You can remove individual entries or clear all of your History at any time from the History screen. Uninstalling the app removes everything stored on your device &mdash; there is no server-side copy to delete, because your data never leaves your device in the first place.</p>
+      </section>
+
+      <section class="doc">
+        <h2>4. Frequently Asked Questions</h2>
+        <ul class="faq">
+          <li>
+            <span class="q">Where is my JSON stored?</span>
+            <p class="a">On your device only. Anything you paste, upload, or fetch is processed and saved locally. It is never sent to us or to any server we operate.</p>
+          </li>
+          <li>
+            <span class="q">Can I fetch JSON from any URL?</span>
+            <p class="a">Yes &mdash; any URL your device can reach. The request goes directly from your device to the address you enter; we don&rsquo;t proxy it. Plain <code>http://</code> URLs may be blocked by your operating system for security, so prefer <code>https://</code>.</p>
+          </li>
+          <li>
+            <span class="q">Do I need an account?</span>
+            <p class="a">No. There are no accounts, sign-ins, or subscriptions. The app works fully offline after install.</p>
+          </li>
+          <li>
+            <span class="q">How do I switch between the list and tree views?</span>
+            <p class="a">Use the view toggle in the top bar while browsing, or set your default in Settings &rarr; Default view. Your choice is remembered.</p>
+          </li>
+          <li>
+            <span class="q">Why did the app ask to read my clipboard?</span>
+            <p class="a">JSON Explorer checks the clipboard for valid JSON so it can offer a one-tap load. This happens only while the app is open, and the contents stay on your device unless you choose to load them.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="doc">
+        <h2>5. Staying Up to Date</h2>
+        <p>Keeping the app updated ensures you have the latest fixes and features. Updates are delivered through the App Store or Google Play. If you hit a persistent issue, confirming you&rsquo;re on the latest version is a great first step.</p>
+      </section>
+
+      <section class="doc">
+        <h2>6. Contact</h2>
+        <p>For anything else, email <a class="link" href="mailto:toshit@tosnetic.com?subject=JSON%20Explorer%20support">toshit@tosnetic.com</a> and we&rsquo;ll get back to you as soon as we can.</p>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 Toshit Singh &middot; JSON Explorer</footer>
+  </div>
+</body>
+</html>
