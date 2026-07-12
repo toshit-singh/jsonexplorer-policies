@@ -1,0 +1,146 @@
+{
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "July 12, 2026",
+        "intro": "This Privacy Policy describes how JSON Explorer (\"we\", \"us\", or \"the App\") handles information when you use the JSON Explorer mobile application. By using the App, you agree to the practices described here.",
+        "sections": [
+            {
+                "heading": "1. Information We Collect",
+                "paragraphs": [
+                    "We do not collect, transmit, or store any personal information about you. JSON Explorer does not require an account, and we do not ask for your name, email address, phone number, device identifiers, or location.",
+                    "The App's purpose is to let you view JSON that you paste, upload, or fetch from a URL. This data is processed and stored locally on your device and is never sent to us or to any server we operate."
+                ]
+            },
+            {
+                "heading": "2. How Your Data Is Stored",
+                "paragraphs": [
+                    "When you load JSON, the App may keep a local copy in your History so you can revisit it later. Your theme and default-view preferences are also saved. All of this is stored on your device using the operating system's native storage and is never uploaded to us.",
+                    "You are in control: you can delete individual entries or clear your entire History at any time from the History screen. Uninstalling the App removes all locally stored data."
+                ]
+            },
+            {
+                "heading": "3. Network Use",
+                "paragraphs": [
+                    "When you use the \"Open URL\" or Advanced API builder feature to fetch JSON, the App makes a network request directly from your device to the URL or API you specify. The App acts as a client on your behalf. We do not route this request through our servers, and we do not see, log, or store the request or its response.",
+                    "Your use of any third-party URL or API is governed by that provider's own terms and privacy practices. We encourage you to review them."
+                ]
+            },
+            {
+                "heading": "4. Clipboard Access",
+                "paragraphs": [
+                    "To make loading JSON faster, the App can read your device clipboard to detect whether you have copied JSON and offer to load it. Clipboard contents are read only while the App is open and only for this purpose; they are processed on-device.",
+                    "Clipboard data is never transmitted off your device. It is added to your local History only if you choose to load the detected JSON."
+                ]
+            },
+            {
+                "heading": "5. Third-Party Services",
+                "paragraphs": [
+                    "The App does not include any advertising networks, analytics SDKs, cross-app trackers, or other third-party services that collect data from you."
+                ]
+            },
+            {
+                "heading": "6. Children's Privacy",
+                "paragraphs": [
+                    "The App is intended for general audiences and developers. It is not directed to children under 13 (or the applicable age in your jurisdiction), and we do not knowingly collect any information from children."
+                ]
+            },
+            {
+                "heading": "7. Security",
+                "paragraphs": [
+                    "Because the App does not transmit personal information to us and stores your data locally on your device, the security of that data depends on the protections provided by your device's operating system."
+                ]
+            },
+            {
+                "heading": "8. Changes to This Policy",
+                "paragraphs": [
+                    "We may update or modify this Privacy Policy at any time, at our sole discretion, with or without prior notice.",
+                    "When we do, we will update the \"Last updated\" date shown within the App. Your continued use of the App after a change becomes effective constitutes your acceptance of the updated Privacy Policy. If you do not agree to the updated policy, you should stop using the App."
+                ]
+            },
+            {
+                "heading": "9. Contact Us",
+                "paragraphs": [
+                    "If you have any questions about this document or your use of JSON Explorer, you can contact Toshit Singh at toshit@tosnetic.com.",
+                    "We will respond to privacy-related questions as soon as reasonably possible."
+                ]
+            }
+        ]
+    },
+    "termsOfService": {
+        "title": "Terms of Service",
+        "lastUpdated": "July 12, 2026",
+        "intro": "These Terms of Service (\"Terms\") govern your use of the JSON Explorer mobile application (the \"App\") provided by Toshit Singh (\"we\" or \"us\"). By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.",
+        "sections": [
+            {
+                "heading": "1. License to Use",
+                "paragraphs": [
+                    "Subject to your compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to download, install, and use the App for your own use on a device that you own or control."
+                ]
+            },
+            {
+                "heading": "2. Acceptable Use",
+                "paragraphs": [
+                    "You agree to use the App only for lawful purposes and in a manner that does not violate any applicable law or the rights of others.",
+                    "You are solely responsible for any JSON you load, paste, upload, or fetch, and for any URL or API you choose to access through the App. You must not use the App to access systems, data, or APIs without proper authorization."
+                ]
+            },
+            {
+                "heading": "3. Your Content",
+                "paragraphs": [
+                    "You retain all rights to any JSON or other content you load into the App. The App processes your content locally on your device. We do not access, host, or claim any ownership over your content."
+                ]
+            },
+            {
+                "heading": "4. Intellectual Property",
+                "paragraphs": [
+                    "The App, including its design, source code, and visual elements, is owned by us and protected by applicable intellectual-property laws. These Terms do not grant you any right to use our trademarks, logos, or other branding."
+                ]
+            },
+            {
+                "heading": "5. No Warranty",
+                "paragraphs": [
+                    "The App is provided \"AS IS\" and \"AS AVAILABLE,\" without warranties of any kind, whether express or implied. We do not guarantee that the App will be error-free, uninterrupted, secure, or that it will meet your requirements. Your use of the App is at your own risk."
+                ]
+            },
+            {
+                "heading": "6. Limitation of Liability",
+                "paragraphs": [
+                    "To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data or profits, arising out of or related to your use of the App.",
+                    "In no event shall our total liability to you exceed the amount, if any, that you paid us for the App."
+                ]
+            },
+            {
+                "heading": "7. Third-Party Services",
+                "paragraphs": [
+                    "The App may let you connect to third-party URLs and APIs of your choosing. We do not control, and are not responsible for, the content, availability, accuracy, or practices of any third-party service. Your use of third-party services is at your own risk and subject to their own terms."
+                ]
+            },
+            {
+                "heading": "8. Termination",
+                "paragraphs": [
+                    "You may stop using the App at any time by uninstalling it. We may modify, suspend, or discontinue the App, or these Terms, at any time and without notice. Upon termination, the license granted in Section 1 ends."
+                ]
+            },
+            {
+                "heading": "9. Changes to These Terms",
+                "paragraphs": [
+                    "We may revise these Terms at any time, at our sole discretion, with or without prior notice.",
+                    "The most current version will always be available within the App with an updated \"Last updated\" date. Your continued use of the App after changes take effect constitutes your acceptance of the revised Terms. If you do not agree to the revised Terms, you should stop using the App."
+                ]
+            },
+            {
+                "heading": "10. Governing Law",
+                "paragraphs": [
+                    "These Terms are governed by the laws of your jurisdiction of residence, without regard to its conflict-of-law principles."
+                ]
+            },
+            {
+                "heading": "11. Contact Us",
+                "paragraphs": [
+                    "If you have any questions about this document or your use of JSON Explorer, you can contact Toshit Singh at toshit@tosnetic.com.",
+                    "We will respond to questions about these Terms as soon as reasonably possible."
+                ]
+            }
+        ]
+    }
+}
